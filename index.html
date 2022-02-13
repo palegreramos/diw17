@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="estilos.css">
     <title>Cadena perpetua</title>
+     <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            Notification.requestPermission().then(function (permission) {
+                // If the user accepts, let's create a notification
+                if (permission === "granted") {
+                    let notification = new Notification("Hola",{
+                        body: "body",
+                        icon: "favicon.ico"
+                    });
+                }
+            });
+        });
+        
+    </script>
 </head>
 <body>
     <h1>Hola mundo</h1>
