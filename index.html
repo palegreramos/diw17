@@ -13,7 +13,8 @@
                 if (permission === "granted") {
                     let notification = new Notification("Hola",{
                         body: "body",
-                        icon: "OneDrive.ico"
+                        icon: "OneDrive.ico",
+                        vibrate: [200, 100, 200]
                     });
                 } else alert("no permites notificaciones desde este sitio");
             });
