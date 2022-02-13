@@ -17,10 +17,6 @@
                         timeout: 10000, 
                         vibrate: [100, 200, 100]
                     });
-                    notification.onclick = function(event) {
-  event.preventDefault(); // prevent the browser from focusing the Notification's tab
-  window.open('http://www.mozilla.org', '_blank');
-}
                 } else alert("no permites notificaciones desde este sitio");
             });
         });
