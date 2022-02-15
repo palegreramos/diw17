@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos copiar y pegar</title>
+    <script>
+        function notificar(msg) {
+            Notification.requestPermission().then(function (permission) {
+                if (permission === "granted") {
+                    let notification = new Notification(document.title, {
+                        body: `No puedes ${msg} \n ${String.fromCodePoint(0x1F625)}`,
+                        icon: "favicon.ico"
+                    });
+                }
+            });
+        }
+        function quitarevt(evt) {
+            evt.preventDefault();
+            notificar(evt.type);
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('#pass1, #pass2').forEach((e) => {
+                e.addEventListener("copy", quitarevt);
+                e.addEventListener("paste", quitarevt);
+            });
+        });        
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="email" id="mail">
+        <input type="text" id="pass1">
+        <input type="text" id="pass2">
+    </form>
+</body>
+
+</html>
