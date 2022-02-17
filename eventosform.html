@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -14,8 +14,10 @@
                         body: `No puedes ${msg} \n ${String.fromCodePoint(0x1F62D)}`,
                         icon: "favicon.ico"
                     });
+                } else {
+                    alert(`No puedes ${msg} \n ${String.fromCodePoint(0x1F631)}`)
                 }
-            }).catch(alert(`No puedes ${msg} \n ${String.fromCodePoint(0x1F631)}`));
+            }).catch();
         }
         function quitarevt(evt) {
             evt.preventDefault();
