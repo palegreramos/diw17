@@ -24,7 +24,7 @@
             notificar(evt.type);
         }
         window.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('#pass1, #pass2').forEach((e) => {
+            document.querySelectorAll('#pass1, #pass2').forEach(e => {
                 e.addEventListener("copy", quitarevt);
                 e.addEventListener("paste", quitarevt);
             });
